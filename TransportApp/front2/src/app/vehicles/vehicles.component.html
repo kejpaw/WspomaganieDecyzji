@@ -1,0 +1,19 @@
+
+<div id="vehiclesInput">
+
+<div class="inputAndLabel">
+    <label>Marka</label> <input [(ngModel)]="Name" value={{Brand}} class='vehicleInput'>    
+</div>
+<div class="inputAndLabel">
+    <label>Model</label> <input [(ngModel)]="CarModel" class='vehicleInput'>    
+</div>
+<div class="inputAndLabel">
+    <label>Nr rejestracyjny</label> <input [(ngModel)]="CarNumber" class='vehicleInput'>    
+</div>
+<div class="inputAndLabel">
+    <label>Rok produkcji</label> <input [(ngModel)]="Year" class='vehicleInput'>    
+</div>
+
+</div>
+
+<button class="submit" (click)="submitCar()"> Wprowadź </button>

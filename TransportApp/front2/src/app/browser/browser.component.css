@@ -1,0 +1,15 @@
+p {
+margin: 0 0 5px;
+    width: 500px;
+    background-color: #bac6d8;
+
+   border-color: #92aedb;
+    border-style: solid;
+}
+ul {
+    background-color: white;
+    width: 500px;
+
+    border-color: #92aedb;
+    border-style: solid;
+}

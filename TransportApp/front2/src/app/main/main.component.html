@@ -1,0 +1,65 @@
+<main>
+    <div class="mapAndToolbar">
+        <div class="mapContainer">
+                    <!--these properties are required: center, zoom-->
+                    <google-map [center]="center" [zoom]="zoom" [disableDefaultUI]="disableDefaultUI" [disableDoubleClickZoom]="disableDoubleClickZoom"
+                        [mapTypeId]="mapTypeId" [maxZoom]="maxZoom" [minZoom]="minZoom" [styles]="styles">
+                        <!--this property is required: position-->
+                    </google-map>
+        </div>
+
+        <div class="mapTools">
+
+            <div class="imageArea">
+                <a class='imageButton' (click)="setAdding()"> <img src="assets/images/man.PNG"/></a>
+            </div>
+
+            
+            <div class="imageArea">
+                <a class='imageButton' (click)="setAddingEnd()"> <img src="assets/images/man.PNG"/></a>
+            </div>
+
+            <div class="dateDiv">
+              <p-calendar [(ngModel)]="startDate" name="A" showTime="true"  hourFormat="24" dateFormat="dd/mm/yy"></p-calendar>
+            </div>
+            <div class="dateDiv">
+              <p-calendar [(ngModel)]="endDate" showTime="true" hourFormat="24" dateFormat="dd/mm/yy"></p-calendar>     
+            </div>
+            <div >
+               <select  id="selection">
+                    <option value=1>Pasażer</option>
+                    <option value=0>Kierowca</option>
+                </select>
+            </div>
+
+        <div>
+            <button class="deleter" (click)="deleteAll()"> Usuń przejazdy </button>
+        </div>      
+
+           <!--
+            <div class="imageArea">
+                <a class='imageButton' onClick="alert('It workedddd');"> <img src="assets/images/bus.PNG"/></a>
+            </div>
+            -->
+        </div>
+    </div>
+
+    <div class ="submitBtn" (click)="submitMarkers()">
+        ZAPISZ..
+        <!--a class="submitBtn" (click)="submitMarkers()"> ZAPISZ </a> -->
+    </div>
+
+    <div class ="submitBtn" (click)="count()">
+        OBLICZ..
+        <!--a class="submitBtn" (click)="submitMarkers()"> ZAPISZ </a> -->
+    </div>
+
+
+
+
+   <!-- 
+    <ul>
+        A aplikacja mowi tak, bociana dziabal
+  <li *ngFor="let value of apiValues">{{value}}</li>
+</ul>-->
+</main>

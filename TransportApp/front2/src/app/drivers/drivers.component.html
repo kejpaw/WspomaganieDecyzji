@@ -1,0 +1,23 @@
+<div id="driversInput">
+
+<div class="inputAndLabel">
+    <label>Imię</label> <input [(ngModel)]="Name" value={{Brand}} class='vehicleInput'>    
+</div>
+<div class="inputAndLabel">
+    <label>Nazwisko</label> <input [(ngModel)]="Surname" class='vehicleInput'>    
+</div>
+
+</div>
+
+<div>
+
+  <label>Region</label>
+  <select  id="selection">
+    <option value=1>Wrocław wschód</option>
+    <option value=2>Wrocław zachód</option>
+  </select> 
+</div>
+
+<div>
+  <button class="submit" (click)="submitDriver()"> Wprowadź </button>
+</div>

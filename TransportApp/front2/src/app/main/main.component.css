@@ -1,0 +1,78 @@
+body {
+    background-color: #a8abaf;
+}
+
+.imageButton {
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    background-color: grey;
+    display: inline-block;
+    /*vertical-align: center;*/
+   /* width: 80px;*/
+    margin-left: auto;
+    margin-right: auto
+}
+
+
+.imageButton {
+    display: inline-block;
+    vertical-align: center;
+}
+
+
+#google-map {
+float: left;
+
+}
+
+.mapAndToolbar {
+    display: flex;
+    height: 500px;
+    margin-left: 50px;
+}
+
+.mapTools {
+    height: 500px;
+    background-color: grey;
+    width: 180px;
+}
+
+.submitBtn {
+    width: 680px;
+    height: 30px;
+    background-color: #D3DAFF;
+    text-align: center;
+    font-size: 19px;
+    margin-left: 50px;
+}
+
+
+.submitBtn:hover{
+    border-color: #92aedb;;
+    border-style: solid;
+}
+
+.dateDiv {
+    margin: 5px;
+    width: 100px;
+}
+
+input.ui-inputtext {
+     width: 100px !important; 
+}
+
+p-calendar {
+    width: 100px;
+}
+
+select {
+    margin: 0px 5px 5px 5px;
+    width: 168px;
+}
+
+.deleter {
+    margin: 0px 5px 5px 5px;
+    width: 168px;
+}

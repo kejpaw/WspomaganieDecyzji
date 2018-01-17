@@ -1,0 +1,47 @@
+
+<div class="forMap">
+
+<div class="mapContainer">
+                    <!--these properties are required: center, zoom-->
+                    <google-map [center]="center" [zoom]="zoom" [disableDefaultUI]="disableDefaultUI" [disableDoubleClickZoom]="disableDoubleClickZoom"
+                        [mapTypeId]="mapTypeId" [maxZoom]="maxZoom" [minZoom]="minZoom" [styles]="styles">
+                        <!--this property is required: position-->
+                    </google-map>
+</div>
+
+<div class="sliderContainer">
+
+
+<span class="textBox"> Pieszo:</span>
+<p-slider [(ngModel)]="barefootValue" [min]="0" [max]="100"></p-slider>     <span class="textBox">Przesiadki:</span>
+
+
+
+<p-slider [(ngModel)]="val" [step]="50" [min]="0" [max]="100" (onChange)="handleSlideChange()"></p-slider>
+<span id="przesiadki" class="textBox" > </span>
+
+
+</div>
+
+<!--div class="selection">
+               <select id="pieszo" class="selection">
+                    <option value=2>Dużo</option>                   
+                    <option value=1>W normie</option>
+                    <option value=0>Niewiele</option>
+                </select>   
+
+                <select id="przesiadki" class="selection">
+                    <option value=2>Dowolnie dużo</option>                   
+                    <option value=1>Z umiarem</option>
+                    <option value=0>Brak</option>
+                </select> 
+
+</div-->
+
+<div> 
+<button class ="submitBtn" (click)="count()"> OBLICZ </button>
+        <!--a class="submitBtn" (click)="submitMarkers()"> ZAPISZ </a> -->        
+</div>
+</div>
+
+

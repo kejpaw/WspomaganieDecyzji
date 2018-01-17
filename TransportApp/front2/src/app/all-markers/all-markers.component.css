@@ -1,0 +1,50 @@
+
+#google-map {
+display: inline-block;
+}
+
+.submitBtn {
+    width: 500px;
+    height: 30px;
+    background-color: #D3DAFF;
+    text-align: center;
+    font-size: 19px;
+    display: inline-block;
+}
+
+div.selection {
+    display: inline-block;
+}
+
+
+.mapContainer {
+    display: inline-block;
+}
+
+.forMap {
+    display: inline-block;
+    font-size: 19px;
+    margin: 50px;
+}
+.submitBtn:hover{
+    border-color: #92aedb;;
+    border-style: solid;
+}
+
+.ui-slider{
+    width: 100px;
+}
+
+p-slider{
+    float: left;
+    margin: 5px 20px 10px 20px;
+}
+
+.sliderContainer {
+    color: #2e476d;
+}
+
+span.textBox {
+  vertical-align: middle;
+  float: left;
+}
