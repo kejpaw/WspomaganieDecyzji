@@ -34,13 +34,6 @@ namespace TransportApp.DbCore
 
                 modelBuilder.Entity<Distance>().ToTable("Distance");
                 modelBuilder.Entity<Distance>().HasKey(x => x.Id);
-
-
-                /*
-                modelBuilder.Entity<Vehicle>().ToTable("Vehicle");
-                modelBuilder.Entity<Vehicle>().HasKey(x => x.Id);
-                modelBuilder.Entity<Driver>().ToTable("Driver").HasKey(x => x.Id);  
-                modelBuilder.Entity<PriceList>().ToTable("PriceList").HasKey(x => x.Id);*/
             }
             catch (Exception ex)
             {

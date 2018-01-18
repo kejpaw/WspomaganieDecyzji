@@ -149,6 +149,9 @@ export class AllMarkersComponent implements OnInit {
                 me.map.addPolyline(new google.maps.LatLng(item.StartLat,item.StartLng), new google.maps.LatLng(item.EndLat,item.EndLng), color);
                 }
             }); 
+        },
+        err => {
+            alert('Błąd podczas obliczania optymalnej trasy');
         }); 
     }
 

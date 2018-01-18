@@ -27,18 +27,6 @@ namespace TransportApp
         [HttpGet]
         public IEnumerable<string> Get()
         {
-
-            //var orderek = Context.Order.First();
-            TestTable tejbl;
-            Orders orderek;
-
-
-                tejbl = Context.TestTableRepo.First();
-                var ordery = Context.Orders.ToList();
-                orderek = Context.Orders.First();
-                Console.Write("ddd");
-
-
             return new string[] { $"value1", "value2" };
         }
 
@@ -80,17 +68,6 @@ namespace TransportApp
             return JsonConvert.SerializeObject(Context.Orders.ToList()); 
         }
 
-
-        [HttpGet]
-        [Route("GetMatrix")]
-        public string GetMatrix()
-        {
-            string dd= "nic";
-
-            DistanceMatrix matrix;
-
-            return dd;
-        }
 
 
 

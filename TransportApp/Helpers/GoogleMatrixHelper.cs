@@ -46,8 +46,9 @@ namespace TransportApp.Helpers
         {
             var distances = new List<Distance>();
             var driveOffers = context.Orders.Where(x => x.Request == false)
-                .Where(x=> x.Id != newModel.Id).OrderBy(x=> x.Id).ToList();
-
+                .Where(x=> x.Id != newModel.Id).OrderBy(x=> x.Id)
+                .ToList();
+             
 
             var orderIds = driveOffers.Select(x => x.Id).ToList();
 
@@ -111,8 +112,54 @@ namespace TransportApp.Helpers
                             OnFoot = true
                         });
                     }              
-            } //0.28 m/s - predkosc pieszego*/
+            } 
             
+
+
+            if (passenger == false) //uzupelnienie od kierowcy do istniejacych pasazerow
+            {
+                
+                var requests = context.Orders.Where(x => x.Request).OrderBy(x=> x.Id).ToList();
+
+                if (requests.Count > 0)
+                {
+                    var theirStartsMyStart = GetDistanceMatrix(requests, new List<Orders> { newModel }, true, true);
+
+                    for (int i = 0; i < theirStartsMyStart.rows.Count; i++)
+                    {
+                        var currentRow = theirStartsMyStart.rows[i];
+
+                        distances.Add(new Distance
+                        {
+                            Id = idDist++,
+                            Id_Start = requests.ElementAt(i).Id,
+                            Id_End = newModel.Id,
+                            DistanceMeters = Int32.Parse(currentRow.elements.ElementAt(0).distance.value),
+                            Time = 0,
+                            OnFoot = true
+                        });
+                    }
+
+                    var myStartTheirEnds = GetDistanceMatrix(new List<Orders> { newModel }, requests, false, false);
+
+                    var row = myStartTheirEnds.rows.First().elements;
+
+                    for (int j = 0; j < row.Count; j++)
+                    {
+                        distances.Add(new Distance
+                        {
+                            Id = idDist++,
+                            Id_Start = newModel.Id,
+                            Id_End = requests.ElementAt(j).Id,
+                            DistanceMeters = Int32.Parse(row.ElementAt(j).distance.value),
+                            Time = 0,
+                            OnFoot = true
+                        });
+                    }
+                }
+            }
+
+
             context.Distance.AddRange(distances);
             context.SaveChanges();
         }
